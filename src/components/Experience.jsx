@@ -6,7 +6,7 @@ const experiences = [
     company: 'Skillmine Technology Consulting',
     role: 'Junior Software Developer',
     period: 'June 2023 - Present',
-    duration: '2 years 9 months',
+    duration: '2+ years',
     location: 'Sivakasi, Tamil Nadu, India',
     highlights: [
       'Developing and maintaining enterprise-grade web applications',
@@ -18,7 +18,7 @@ const experiences = [
   {
     company: 'Cooldreamers',
     role: 'Internship Trainee',
-    period: 'December 2022 - May 2023',
+    period: 'Dec 2022 - May 2023',
     duration: '6 months',
     location: 'Sivakasi, Tamil Nadu, India',
     highlights: [
@@ -31,10 +31,13 @@ const experiences = [
 
 function Experience() {
   return (
-    <section id="experience" className="section">
+    <section id="experience" className="section experience-section">
       <div className="container">
-        <h2 className="section-title">Experience</h2>
-        <p className="section-subtitle">My professional journey</p>
+        <div className="section-header">
+          <span className="section-tag">Career</span>
+          <h2 className="section-title">Work Experience</h2>
+          <p className="section-subtitle">My professional journey so far</p>
+        </div>
 
         <div className="timeline">
           {experiences.map((exp, index) => (

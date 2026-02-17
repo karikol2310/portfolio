@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import Logo from './Logo';
 import './Navbar.css';
 
 const navLinks = [
@@ -31,7 +32,7 @@ function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <a className="navbar-logo" href="#hero" onClick={() => handleClick('hero')}>
-          {'<KR />'}
+          <Logo size="default" />
         </a>
 
         <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
@@ -44,7 +45,7 @@ function Navbar() {
           ))}
         </ul>
 
-        <button className="navbar-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        <button className="navbar-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>

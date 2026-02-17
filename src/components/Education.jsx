@@ -3,12 +3,16 @@ import './Education.css';
 
 function Education() {
   return (
-    <section id="education" className="section" style={{ background: 'var(--bg-section)' }}>
+    <section id="education" className="section">
       <div className="container">
-        <h2 className="section-title">Education</h2>
-        <p className="section-subtitle">My academic background</p>
+        <div className="section-header">
+          <span className="section-tag">Education</span>
+          <h2 className="section-title">Academic Background</h2>
+          <p className="section-subtitle">My educational journey</p>
+        </div>
 
         <div className="education-card card">
+          <div className="education-accent"></div>
           <div className="education-icon">
             <FaGraduationCap />
           </div>
