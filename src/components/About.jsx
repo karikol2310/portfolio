@@ -43,7 +43,7 @@ function About() {
 
           <div className="about-right">
             <div className="about-card">
-              <div className="about-card-icon">
+              <div className="about-card-icon" aria-hidden="true">
                 <FaLaptopCode />
               </div>
               <div className="about-card-text">
@@ -52,7 +52,7 @@ function About() {
               </div>
             </div>
             <div className="about-card">
-              <div className="about-card-icon">
+              <div className="about-card-icon" aria-hidden="true">
                 <FaServer />
               </div>
               <div className="about-card-text">
@@ -61,7 +61,7 @@ function About() {
               </div>
             </div>
             <div className="about-card">
-              <div className="about-card-icon">
+              <div className="about-card-icon" aria-hidden="true">
                 <FaCode />
               </div>
               <div className="about-card-text">

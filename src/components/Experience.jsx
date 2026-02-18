@@ -42,7 +42,7 @@ function Experience() {
         <div className="timeline">
           {experiences.map((exp, index) => (
             <div key={index} className="timeline-item">
-              <div className="timeline-dot">
+              <div className="timeline-dot" aria-hidden="true">
                 <FaBriefcase />
               </div>
               <div className="timeline-content card">

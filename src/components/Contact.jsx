@@ -20,7 +20,7 @@ function Contact() {
 
             <div className="contact-items">
               <a href="mailto:karikolraja03@gmail.com" className="contact-item">
-                <div className="contact-item-icon">
+                <div className="contact-item-icon" aria-hidden="true">
                   <FaEnvelope />
                 </div>
                 <div>
@@ -35,7 +35,7 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="contact-item"
               >
-                <div className="contact-item-icon">
+                <div className="contact-item-icon" aria-hidden="true">
                   <FaLinkedin />
                 </div>
                 <div>
@@ -45,7 +45,7 @@ function Contact() {
               </a>
 
               <div className="contact-item">
-                <div className="contact-item-icon">
+                <div className="contact-item-icon" aria-hidden="true">
                   <FaMapMarkerAlt />
                 </div>
                 <div>
@@ -56,7 +56,7 @@ function Contact() {
             </div>
           </div>
 
-          <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="contact-form" aria-label="Contact form" onSubmit={(e) => e.preventDefault()}>
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">Name</label>
@@ -76,7 +76,7 @@ function Contact() {
               <textarea id="message" rows="5" placeholder="Tell me about your project..."></textarea>
             </div>
             <button type="submit" className="btn btn-primary contact-submit">
-              <FaPaperPlane /> Send Message
+              <FaPaperPlane aria-hidden="true" /> Send Message
             </button>
           </form>
         </div>

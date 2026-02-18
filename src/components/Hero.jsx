@@ -4,7 +4,7 @@ import './Hero.css';
 function Hero() {
   return (
     <section id="hero" className="hero">
-      <div className="hero-bg">
+      <div className="hero-bg" aria-hidden="true">
         <div className="hero-orb hero-orb-1"></div>
         <div className="hero-orb hero-orb-2"></div>
         <div className="hero-orb hero-orb-3"></div>
@@ -24,7 +24,7 @@ function Hero() {
 
           <div className="hero-buttons">
             <a href="#contact" className="btn btn-primary">
-              <FaEnvelope /> Get in Touch
+              <FaEnvelope aria-hidden="true" /> Get in Touch
             </a>
             <a
               href="https://www.linkedin.com/in/j-karikol-raja-018292219"
@@ -32,7 +32,7 @@ function Hero() {
               rel="noopener noreferrer"
               className="btn btn-outline"
             >
-              <FaLinkedin /> LinkedIn
+              <FaLinkedin aria-hidden="true" /> LinkedIn
             </a>
           </div>
 
@@ -52,7 +52,7 @@ function Hero() {
         <div className="hero-visual">
           <div className="hero-card">
             <div className="hero-card-header">
-              <div className="hero-card-dots">
+              <div className="hero-card-dots" aria-hidden="true">
                 <span></span><span></span><span></span>
               </div>
               <span className="hero-card-title">portfolio.jsx</span>
@@ -71,8 +71,8 @@ function Hero() {
         </div>
       </div>
 
-      <a href="#about" className="hero-scroll">
-        <FaChevronDown />
+      <a href="#about" className="hero-scroll" aria-label="Scroll to About section">
+        <FaChevronDown aria-hidden="true" />
       </a>
     </section>
   );

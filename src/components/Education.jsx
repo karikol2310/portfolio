@@ -13,7 +13,7 @@ function Education() {
 
         <div className="education-card card">
           <div className="education-accent"></div>
-          <div className="education-icon">
+          <div className="education-icon" aria-hidden="true">
             <FaGraduationCap />
           </div>
           <div className="education-details">

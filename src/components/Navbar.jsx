@@ -29,7 +29,7 @@ function Navbar() {
   };
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} aria-label="Main navigation">
       <div className="navbar-container">
         <a className="navbar-logo" href="#hero" onClick={() => handleClick('hero')}>
           <Logo size="default" />
@@ -45,7 +45,12 @@ function Navbar() {
           ))}
         </ul>
 
-        <button className="navbar-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+        <button
+          className="navbar-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+        >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>

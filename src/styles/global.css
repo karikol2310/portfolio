@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +15,7 @@
   --bg-card-hover: #142845;
   --text-primary: #e6f1ff;
   --text-secondary: #8892b0;
-  --text-muted: #5a6580;
+  --text-muted: #7a84a0;
   --border: #1a2f4a;
   --border-light: #254a6f;
   --gradient: linear-gradient(135deg, #00d4ff, #0077b6);
@@ -39,6 +37,25 @@ body {
 
 .app {
   min-height: 100vh;
+}
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 10000;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: var(--bg-dark);
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+.skip-to-content:focus {
+  top: 0;
 }
 
 .container {
@@ -165,6 +182,16 @@ body {
 ::selection {
   background: rgba(0, 212, 255, 0.2);
   color: var(--text-primary);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Responsive */

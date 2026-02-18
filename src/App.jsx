@@ -11,13 +11,16 @@ import './styles/global.css';
 function App() {
   return (
     <div className="app">
+      <a href="#hero" className="skip-to-content">Skip to content</a>
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Education />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Education />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

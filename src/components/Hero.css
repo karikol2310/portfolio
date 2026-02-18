@@ -18,6 +18,8 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
+  will-change: transform;
+  contain: strict;
 }
 
 .hero-orb-1 {
@@ -278,6 +280,21 @@
 @keyframes bounceDown {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb {
+    animation: none;
+  }
+
+  .hero-scroll {
+    animation: none;
+  }
+
+  .hero-badge-dot {
+    animation: none;
+  }
 }
 
 /* Responsive */
