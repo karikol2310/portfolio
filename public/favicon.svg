@@ -1,0 +1,10 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="44" height="44" rx="12" stroke="url(#fg)" strokeWidth="2.5" fill="#060d18" />
+  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="url(#fg)" font-family="'Fira Code', monospace" font-weight="700" font-size="18">KR</text>
+  <defs>
+    <linearGradient id="fg" x1="0" y1="0" x2="48" y2="48">
+      <stop offset="0%" stop-color="#00d4ff" />
+      <stop offset="100%" stop-color="#0077b6" />
+    </linearGradient>
+  </defs>
+</svg>
