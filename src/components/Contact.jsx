@@ -60,20 +60,20 @@ function Contact() {
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">Name</label>
-                <input type="text" id="name" placeholder="John Doe" />
+                <input type="text" id="name" name="name" autoComplete="name" placeholder="John Doe" />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" placeholder="john@example.com" />
+                <input type="email" id="email" name="email" autoComplete="email" placeholder="john@example.com" />
               </div>
             </div>
             <div className="form-group">
               <label htmlFor="subject">Subject</label>
-              <input type="text" id="subject" placeholder="Project inquiry" />
+              <input type="text" id="subject" name="subject" autoComplete="off" placeholder="Project inquiry" />
             </div>
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea id="message" rows="5" placeholder="Tell me about your project..."></textarea>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."></textarea>
             </div>
             <button type="submit" className="btn btn-primary contact-submit">
               <FaPaperPlane aria-hidden="true" /> Send Message
