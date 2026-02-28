@@ -17,7 +17,7 @@ function Loader() {
           return 100;
         }
         const remaining = 100 - prev;
-        const increment = Math.max(1, Math.floor(remaining * 0.08));
+        const increment = Math.max(1, Math.floor(remaining * 0.15));
         return Math.min(prev + increment, 100);
       });
     }, 30);
@@ -30,7 +30,7 @@ function Loader() {
       const timer = setTimeout(() => {
         setExiting(true);
         setLoading(false);
-      }, 300);
+      }, 100);
       return () => clearTimeout(timer);
     }
   }, [progress, loading]);
