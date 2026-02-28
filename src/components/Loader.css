@@ -9,7 +9,7 @@
 }
 
 .loader-overlay.loader-exit {
-  animation: loaderExit 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: loaderExit 0.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .loader-content {

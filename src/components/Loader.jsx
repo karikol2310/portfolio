@@ -17,7 +17,7 @@ function Loader() {
           return 100;
         }
         const remaining = 100 - prev;
-        const increment = Math.max(1, Math.floor(remaining * 0.15));
+        const increment = Math.max(1, Math.floor(remaining * 0.3));
         return Math.min(prev + increment, 100);
       });
     }, 30);
@@ -27,11 +27,8 @@ function Loader() {
 
   useEffect(() => {
     if (progress === 100 && loading) {
-      const timer = setTimeout(() => {
-        setExiting(true);
-        setLoading(false);
-      }, 100);
-      return () => clearTimeout(timer);
+      setExiting(true);
+      setLoading(false);
     }
   }, [progress, loading]);
 
