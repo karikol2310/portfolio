@@ -6,60 +6,8 @@
   position: relative;
   overflow: hidden;
   background: radial-gradient(ellipse at 70% 30%, var(--orb-teal) 0%, transparent 60%),
-              radial-gradient(ellipse at 20% 80%, var(--orb-violet) 0%, transparent 50%);
-}
-
-/* Background effects */
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  content-visibility: auto;
-}
-
-.hero-orb {
-  position: absolute;
-  border-radius: 50%;
-  contain: strict;
-}
-
-.hero-orb-1 {
-  width: 1000px;
-  height: 1000px;
-  background: radial-gradient(circle, var(--orb-cyan) 0%, transparent 70%);
-  top: -20%;
-  right: -15%;
-  animation: orbFloat 8s ease-in-out infinite;
-  animation-delay: 0.6s;
-  animation-fill-mode: backwards;
-}
-
-.hero-orb-2 {
-  width: 850px;
-  height: 850px;
-  background: radial-gradient(circle, var(--orb-indigo) 0%, transparent 70%);
-  bottom: -20%;
-  left: -15%;
-  animation: orbFloat 10s ease-in-out infinite reverse;
-  animation-delay: 0.6s;
-  animation-fill-mode: backwards;
-}
-
-.hero-orb-3 {
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, var(--orb-teal) 0%, transparent 70%);
-  top: 40%;
-  left: 30%;
-  animation: orbFloat 12s ease-in-out infinite;
-  animation-delay: 0.6s;
-  animation-fill-mode: backwards;
-}
-
-@keyframes orbFloat {
-  0%, 100% { transform: translate(0, 0); }
-  33% { transform: translate(20px, -20px); }
-  66% { transform: translate(-15px, 15px); }
+              radial-gradient(ellipse at 20% 80%, var(--orb-violet) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 50%, var(--orb-cyan) 0%, transparent 70%);
 }
 
 .hero-content {
@@ -180,7 +128,7 @@
   color: var(--text-secondary);
   font-family: 'Fira Code', monospace;
   font-weight: 400;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
 }
 
 .hero-tech-items span:hover {
@@ -279,10 +227,6 @@
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .hero-orb {
-    animation: none;
-  }
-
   .hero-scroll {
     animation: none;
   }

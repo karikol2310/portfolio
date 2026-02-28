@@ -1,4 +1,4 @@
-import { FaLinkedin, FaEnvelope, FaGithub, FaHeart } from 'react-icons/fa';
+import { FaLinkedin, FaEnvelope, FaGithub, FaHeart } from './Icons';
 import Logo from './Logo';
 import './Footer.css';
 

@@ -1,15 +1,9 @@
-import { FaLinkedin, FaEnvelope, FaChevronDown } from 'react-icons/fa';
+import { FaLinkedin, FaEnvelope, FaChevronDown } from './Icons';
 import './Hero.css';
 
 function Hero() {
   return (
     <section id="hero" className="hero">
-      <div className="hero-bg" aria-hidden="true">
-        <div className="hero-orb hero-orb-1"></div>
-        <div className="hero-orb hero-orb-2"></div>
-        <div className="hero-orb hero-orb-3"></div>
-      </div>
-
       <div className="container hero-content">
         <div className="hero-text">
           <h1 className="hero-name">
