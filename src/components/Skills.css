@@ -1,3 +1,17 @@
+.skills-section::before {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -150px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--orb-purple) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

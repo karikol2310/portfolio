@@ -5,6 +5,8 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+  background: radial-gradient(ellipse at 70% 30%, var(--orb-teal) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, var(--orb-violet) 0%, transparent 50%);
 }
 
 /* Background effects */
@@ -23,30 +25,51 @@
 }
 
 .hero-orb-1 {
-  width: 500px;
-  height: 500px;
-  background: rgba(0, 212, 255, 0.06);
+  width: 550px;
+  height: 550px;
+  background: var(--orb-cyan);
   top: -10%;
   right: -5%;
   animation: orbFloat 8s ease-in-out infinite;
 }
 
 .hero-orb-2 {
-  width: 400px;
-  height: 400px;
-  background: rgba(0, 119, 182, 0.05);
+  width: 450px;
+  height: 450px;
+  background: var(--orb-indigo);
   bottom: -10%;
   left: -5%;
   animation: orbFloat 10s ease-in-out infinite reverse;
 }
 
 .hero-orb-3 {
-  width: 300px;
-  height: 300px;
-  background: rgba(0, 212, 255, 0.03);
+  width: 350px;
+  height: 350px;
+  background: var(--orb-teal);
   top: 50%;
   left: 40%;
   animation: orbFloat 12s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.hero-orb-4 {
+  width: 400px;
+  height: 400px;
+  background: var(--orb-purple);
+  top: 5%;
+  left: -8%;
+  animation: orbFloat2 9s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.hero-orb-5 {
+  width: 300px;
+  height: 300px;
+  background: var(--orb-violet);
+  top: 40%;
+  right: 15%;
+  animation: orbFloat2 11s ease-in-out infinite reverse;
+  animation-delay: -5s;
 }
 
 @keyframes orbFloat {
@@ -55,12 +78,19 @@
   66% { transform: translate(-15px, 15px) scale(0.95); }
 }
 
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-15px, 25px) scale(1.08); }
+  50% { transform: translate(25px, -10px) scale(0.96); }
+  75% { transform: translate(-10px, -20px) scale(1.03); }
+}
+
 .hero-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0, 212, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 212, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 80px 80px;
   mask-image: radial-gradient(ellipse at 60% 40%, black 20%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse at 60% 40%, black 20%, transparent 70%);
@@ -200,12 +230,12 @@
 }
 
 .hero-card {
-  background: rgba(10, 22, 40, 0.8);
+  background: var(--hero-card-bg);
   border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
   backdrop-filter: blur(10px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--card-shadow);
   transition: transform 0.4s ease;
 }
 
@@ -218,7 +248,7 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 1.25rem;
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--hero-card-header-bg);
   border-bottom: 1px solid var(--border);
 }
 
@@ -254,10 +284,10 @@
   color: var(--text-secondary);
 }
 
-.code-keyword { color: #c792ea; }
-.code-var { color: #82aaff; }
-.code-key { color: #c3e88d; }
-.code-string { color: #f78c6c; }
+.code-keyword { color: var(--code-keyword); }
+.code-var { color: var(--code-var); }
+.code-key { color: var(--code-key); }
+.code-string { color: var(--code-string); }
 
 /* Scroll indicator */
 .hero-scroll {

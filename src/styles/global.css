@@ -21,6 +21,55 @@
   --gradient: linear-gradient(135deg, #00d4ff, #0077b6);
   --gradient-text: linear-gradient(135deg, #00d4ff, #00b4d8, #0077b6);
   --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.08);
+  --navbar-bg: rgba(6, 13, 24, 0.8);
+  --mobile-menu-bg: rgba(10, 22, 40, 0.98);
+  --hero-card-bg: rgba(10, 22, 40, 0.8);
+  --hero-card-header-bg: rgba(0, 0, 0, 0.3);
+  --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  --code-keyword: #c792ea;
+  --code-var: #82aaff;
+  --code-key: #c3e88d;
+  --code-string: #f78c6c;
+  --orb-cyan: rgba(0, 212, 255, 0.15);
+  --orb-purple: rgba(139, 92, 246, 0.12);
+  --orb-indigo: rgba(99, 102, 241, 0.10);
+  --orb-teal: rgba(6, 182, 212, 0.08);
+  --orb-violet: rgba(167, 139, 250, 0.06);
+  --grid-line: rgba(0, 212, 255, 0.04);
+}
+
+[data-theme="light"] {
+  --primary: #0891b2;
+  --primary-dark: #0e7490;
+  --primary-glow: rgba(8, 145, 178, 0.08);
+  --accent: #0e7490;
+  --bg-dark: #ffffff;
+  --bg-section: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --border-light: #cbd5e0;
+  --gradient: linear-gradient(135deg, #0891b2, #0e7490);
+  --gradient-text: linear-gradient(135deg, #0891b2, #0e7490, #155e75);
+  --shadow-glow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --navbar-bg: rgba(255, 255, 255, 0.85);
+  --mobile-menu-bg: rgba(255, 255, 255, 0.98);
+  --hero-card-bg: #f1f5f9;
+  --hero-card-header-bg: #e2e8f0;
+  --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  --code-keyword: #7c3aed;
+  --code-var: #2563eb;
+  --code-key: #16a34a;
+  --code-string: #ea580c;
+  --orb-cyan: rgba(8, 145, 178, 0.15);
+  --orb-purple: rgba(124, 58, 237, 0.12);
+  --orb-indigo: rgba(99, 102, 241, 0.10);
+  --orb-teal: rgba(14, 116, 144, 0.08);
+  --orb-violet: rgba(167, 139, 250, 0.08);
+  --grid-line: rgba(8, 145, 178, 0.06);
 }
 
 html {
@@ -67,6 +116,7 @@ body {
 .section {
   padding: 7rem 0;
   position: relative;
+  overflow: hidden;
 }
 
 .section-header {
@@ -124,7 +174,7 @@ body {
 
 .btn-primary {
   background: var(--gradient);
-  color: #060d18;
+  color: var(--bg-dark);
 }
 
 .btn-primary:hover {

@@ -2,6 +2,20 @@
   background: var(--bg-section);
 }
 
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -150px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--orb-cyan) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .about-content {
   display: grid;
   grid-template-columns: 1.1fr 1fr;

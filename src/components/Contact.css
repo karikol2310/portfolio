@@ -2,6 +2,20 @@
   background: var(--bg-section);
 }
 
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: -120px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, var(--orb-indigo) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
@@ -118,7 +132,6 @@ a.contact-item:hover {
   font-size: 0.92rem;
   font-family: inherit;
   transition: all 0.3s ease;
-  outline: none;
 }
 
 .form-group input::placeholder,

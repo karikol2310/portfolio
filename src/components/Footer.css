@@ -46,6 +46,8 @@
   font-size: 0.9rem;
   transition: all 0.3s ease;
   width: fit-content;
+  padding: 0.5rem 0;
+  display: inline-block;
 }
 
 .footer-nav a:hover {
