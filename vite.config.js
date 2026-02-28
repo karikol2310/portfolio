@@ -6,13 +6,20 @@ export default defineConfig({
   plugins: [
     react(),
     {
-      name: 'async-css',
+      name: 'font-preload',
       enforce: 'post',
-      transformIndexHtml(html) {
-        return html.replace(
-          /(<link rel="stylesheet"[^>]*)(>)/g,
-          '$1 media="print" onload="this.media=\'all\'"$2<noscript>$1$2</noscript>'
-        );
+      transformIndexHtml(html, ctx) {
+        // Preload woff2 fonts to prevent CLS from font swapping
+        if (ctx.bundle) {
+          const fontLinks = Object.keys(ctx.bundle)
+            .filter(name => name.endsWith('.woff2'))
+            .map(name => `<link rel="preload" href="/${name}" as="font" type="font/woff2" crossorigin>`)
+            .join('\n    ');
+          if (fontLinks) {
+            html = html.replace('<link rel="stylesheet"', fontLinks + '\n    <link rel="stylesheet"');
+          }
+        }
+        return html;
       },
     },
   ],
