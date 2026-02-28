@@ -8,7 +8,6 @@ function Hero() {
         <div className="hero-orb hero-orb-1"></div>
         <div className="hero-orb hero-orb-2"></div>
         <div className="hero-orb hero-orb-3"></div>
-        <div className="hero-grid"></div>
       </div>
 
       <div className="container hero-content">
