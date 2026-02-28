@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import {
   FaReact,
   FaNodeJs,
@@ -13,6 +14,7 @@ import {
   SiNestjs,
   SiTailwindcss,
 } from 'react-icons/si';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 import './Skills.css';
 
 const skills = [
@@ -30,16 +32,19 @@ const skills = [
 ];
 
 function Skills() {
+  const sectionRef = useRef(null);
+  const isVisible = useScrollReveal(sectionRef);
+
   return (
-    <section id="skills" className="section">
+    <section id="skills" className="section skills-section" ref={sectionRef}>
       <div className="container">
-        <div className="section-header">
+        <div className={`section-header reveal${isVisible ? ' visible' : ''}`}>
           <span className="section-tag">Skills</span>
           <h2 className="section-title">Tech Stack</h2>
           <p className="section-subtitle">Technologies I work with daily</p>
         </div>
 
-        <div className="skills-grid">
+        <div className={`skills-grid reveal reveal-delay-1${isVisible ? ' visible' : ''}`}>
           {skills.map((skill) => (
             <div key={skill.name} className="skill-card card">
               <div className="skill-icon">{skill.icon}</div>

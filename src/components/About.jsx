@@ -1,18 +1,23 @@
+import { useRef } from 'react';
 import { FaCode, FaServer, FaLaptopCode } from 'react-icons/fa';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 import './About.css';
 
 function About() {
+  const sectionRef = useRef(null);
+  const isVisible = useScrollReveal(sectionRef);
+
   return (
-    <section id="about" className="section about-section">
+    <section id="about" className="section about-section" ref={sectionRef}>
       <div className="container">
-        <div className="section-header">
+        <div className={`section-header reveal${isVisible ? ' visible' : ''}`}>
           <span className="section-tag">About</span>
           <h2 className="section-title">About Me</h2>
           <p className="section-subtitle">Get to know me better</p>
         </div>
 
         <div className="about-content">
-          <div className="about-left">
+          <div className={`about-left reveal-left reveal-delay-1${isVisible ? ' visible' : ''}`}>
             <p className="about-text">
               I'm a passionate <strong>Junior Software Developer</strong> based in Chennai, India,
               currently working at <strong>Skillmine Technology Consulting</strong>. With a Master's
@@ -41,7 +46,7 @@ function About() {
             </div>
           </div>
 
-          <div className="about-right">
+          <div className={`about-right reveal-right reveal-delay-2${isVisible ? ' visible' : ''}`}>
             <div className="about-card">
               <div className="about-card-icon" aria-hidden="true">
                 <FaLaptopCode />

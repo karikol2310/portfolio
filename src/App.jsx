@@ -1,8 +1,10 @@
 import { lazy, Suspense } from 'react';
+import Loader from './components/Loader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 import './styles/global.css';
+import './styles/animations.css';
 
 const About = lazy(() => import('./components/About'));
 const Skills = lazy(() => import('./components/Skills'));
@@ -13,6 +15,7 @@ const Contact = lazy(() => import('./components/Contact'));
 function App() {
   return (
     <div className="app">
+      <Loader />
       <a href="#hero" className="skip-to-content">Skip to content</a>
       <Navbar />
       <main>

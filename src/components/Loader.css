@@ -1,0 +1,98 @@
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-dark);
+}
+
+.loader-overlay.loader-exit {
+  animation: loaderExit 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.loader-logo {
+  width: 80px;
+  height: 80px;
+  animation: loaderLogoIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.loader-logo-glow {
+  animation: loaderLogoIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) both,
+    loaderGlow 1.5s ease-in-out 0.6s infinite;
+}
+
+.loader-bar-track {
+  width: 200px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  background: var(--gradient);
+  border-radius: 4px;
+  transition: width 0.1s linear;
+}
+
+.loader-percent {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+}
+
+@keyframes loaderLogoIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes loaderGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.5));
+  }
+}
+
+@keyframes loaderExit {
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-logo,
+  .loader-logo-glow {
+    animation: none;
+    opacity: 1;
+  }
+
+  .loader-overlay.loader-exit {
+    animation: loaderFadeOut 0.3s ease forwards;
+  }
+
+  @keyframes loaderFadeOut {
+    to {
+      opacity: 0;
+    }
+  }
+}

@@ -1,4 +1,6 @@
+import { useRef } from 'react';
 import { FaBriefcase } from 'react-icons/fa';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 import './Experience.css';
 
 const experiences = [
@@ -30,10 +32,13 @@ const experiences = [
 ];
 
 function Experience() {
+  const sectionRef = useRef(null);
+  const isVisible = useScrollReveal(sectionRef);
+
   return (
-    <section id="experience" className="section experience-section">
+    <section id="experience" className="section experience-section" ref={sectionRef}>
       <div className="container">
-        <div className="section-header">
+        <div className={`section-header reveal${isVisible ? ' visible' : ''}`}>
           <span className="section-tag">Career</span>
           <h2 className="section-title">Work Experience</h2>
           <p className="section-subtitle">My professional journey so far</p>
@@ -41,7 +46,10 @@ function Experience() {
 
         <div className="timeline">
           {experiences.map((exp, index) => (
-            <div key={index} className="timeline-item">
+            <div
+              key={index}
+              className={`timeline-item reveal reveal-delay-${index + 1}${isVisible ? ' visible' : ''}`}
+            >
               <div className="timeline-dot" aria-hidden="true">
                 <FaBriefcase />
               </div>

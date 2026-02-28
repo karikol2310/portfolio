@@ -1,18 +1,23 @@
+import { useRef } from 'react';
 import { FaEnvelope, FaLinkedin, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 import './Contact.css';
 
 function Contact() {
+  const sectionRef = useRef(null);
+  const isVisible = useScrollReveal(sectionRef);
+
   return (
-    <section id="contact" className="section contact-section">
+    <section id="contact" className="section contact-section" ref={sectionRef}>
       <div className="container">
-        <div className="section-header">
+        <div className={`section-header reveal${isVisible ? ' visible' : ''}`}>
           <span className="section-tag">Contact</span>
           <h2 className="section-title">Get In Touch</h2>
           <p className="section-subtitle">Have a project in mind? Let's talk about it</p>
         </div>
 
         <div className="contact-grid">
-          <div className="contact-info">
+          <div className={`contact-info reveal-left reveal-delay-1${isVisible ? ' visible' : ''}`}>
             <h3 className="contact-info-title">Let's connect</h3>
             <p className="contact-info-text">
               I'm always open to discussing new opportunities, projects, or just having a chat about technology.
@@ -56,7 +61,7 @@ function Contact() {
             </div>
           </div>
 
-          <form className="contact-form" aria-label="Contact form" onSubmit={(e) => e.preventDefault()}>
+          <form className={`contact-form reveal-right reveal-delay-2${isVisible ? ' visible' : ''}`} aria-label="Contact form" onSubmit={(e) => e.preventDefault()}>
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">Name</label>
