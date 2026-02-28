@@ -82,7 +82,7 @@ function Loader() {
         <div className="loader-bar-track">
           <div
             className="loader-bar-fill"
-            style={{ width: `${progress}%` }}
+            style={{ transform: `scaleX(${progress / 100})` }}
           />
         </div>
         <span className="loader-percent">{progress}%</span>
