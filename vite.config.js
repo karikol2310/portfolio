@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   plugins: [
     react(),
     {
@@ -25,7 +25,7 @@ export default defineConfig({
   ],
   build: {
     target: 'es2020',
-    rollupOptions: {
+    rollupOptions: isSsrBuild ? {} : {
       output: {
         manualChunks(id) {
           if (id.includes('node_modules/react-dom') || id.includes('node_modules/react/')) {
@@ -35,4 +35,8 @@ export default defineConfig({
       },
     },
   },
-})
+  ssr: {
+    target: 'webworker',
+    noExternal: true,
+  },
+}))

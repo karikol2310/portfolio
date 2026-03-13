@@ -13,6 +13,7 @@ const navLinks = [
 ];
 
 function getInitialTheme() {
+  if (typeof window === 'undefined') return 'dark';
   const stored = localStorage.getItem('theme');
   if (stored) return stored;
   return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
